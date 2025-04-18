@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carbon Footprint Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🌍 Carbon Footprint Calculator</h1>
+
+    <h3>📍 Select Your Country/State:</h3>
+    <select id="location" required>
+      <option value="">--Select--</option>
+      <option value="india">India</option>
+      <option value="usa">USA</option>
+      <option value="germany">Germany</option>
+    </select>
+
+    <form id="footprint-form">
+      <label>🚗 Transport Usage (km/week):</label>
+      <input type="number" id="transport" required />
+
+      <label>💡 Electricity Usage (kWh/month):</label>
+      <input type="number" id="electricity" required />
+
+      <label>🍖 Meat Consumption (meals/week):</label>
+      <input type="number" id="meat" required />
+
+      <label>🗑️ Waste Not Recycled (kg/week):</label>
+      <input type="number" id="waste" required />
+
+      <button type="submit">📊 Calculate</button>
+    </form>
+
+    <div id="result-container">
+      <h2>Result: <span id="status"></span></h2>
+      <h3>Total Emissions: <span id="total-emission">0</span> kg CO₂/year</h3>
+      <canvas id="barChart"></canvas>
+      <canvas id="pieChart"></canvas>
+    </div>
+
+    <div id="suggestions-container">
+      <h3>💡 Tips to Reduce Your Footprint:</h3>
+      <ul id="suggestions-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
